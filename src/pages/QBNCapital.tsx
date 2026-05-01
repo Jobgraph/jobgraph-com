@@ -82,26 +82,26 @@ const QBNCapital = () => (
             {
               Icon: PhoneCall,
               num: "01",
-              title: "Speak to the employee",
-              body: "An AI calls or messages every employee. Asks what they actually do day-to-day, what drains them, what they want to keep, what they&apos;d hand over. Not what HR thinks they do.",
+              title: "Enter a few names",
+              body: "No CSV. No HR integration needed to start. Type in three employees and hit go. They get an email: <em>&ldquo;Be one of the first to have a conversation with Phil, our AI workforce researcher.&rdquo;</em> They pick a time. That&apos;s the whole setup.",
             },
             {
               Icon: Eye,
               num: "02",
-              title: "Understand what they do",
-              body: "Maps tasks, capabilities, time allocation, tacit knowledge — the layer beneath job titles. A living graph of how work actually flows through the org.",
+              title: "Phil calls. They open up.",
+              body: "Phil — or Sarah, or Marcus — calls at the time they chose. Natural conversation, not a survey. Fifteen minutes of genuine back-and-forth about what they actually do, what drains them, what they&apos;d hand over if they could. The kind of thing people don&apos;t say in a skip-level.",
             },
             {
               Icon: Sparkles,
               num: "03",
-              title: "Agents automate it",
-              body: "AI takes over the automatable parts of their work. Not replacing people — augmenting them and freeing capacity for the work only humans can do.",
+              title: "The moment of truth",
+              body: "You see the transcript and the analysis. This is when the employer says: <em>&ldquo;Wow — I didn&apos;t know this. You&apos;ve got my people to open up.&rdquo;</em> That&apos;s the first real value. A living map of what your workforce actually does, built from the people themselves.",
             },
             {
               Icon: GitBranch,
               num: "04",
-              title: "Measure the ROI",
-              body: "Hours saved. £ avoided. Capacity unlocked. Real numbers, not consultant estimates. Then loop again — the graph stays live.",
+              title: "Agents take the painful parts",
+              body: "The tasks your people flagged as draining get handed to autonomous agents. Not replacing anyone — freeing them. With real ROI numbers: hours saved per week, £ avoided per year, FTE capacity unlocked. Then loop again.",
             },
           ].map((c, i) => (
             <FadeIn key={c.num} delay={0.25 + i * 0.08}>
@@ -167,16 +167,16 @@ const QBNCapital = () => (
             {
               href: `${APP_BASE}/try/missions`,
               Icon: PhoneCall,
-              tag: "Step 1 · Speak",
-              title: "Build a call mission",
-              body: "Pick a roster, choose an interviewer (Phil, Sarah, Marcus), set the brief, hit launch. Watch calls move queued → ringing → completed live, with full transcripts and AI summaries.",
+              tag: "Step 1 · Launch",
+              title: "Send the invites",
+              body: "Add employees by name, pick your interviewer — Phil, Sarah, or Marcus — set the brief, hit launch. The platform sends email invites; employees choose their call time. Watch calls move queued → ringing → in progress → completed in real time.",
             },
             {
               href: `${APP_BASE}/try/insights`,
               Icon: Lightbulb,
-              tag: "Step 2 · Understand",
-              title: "See the workforce intel",
-              body: "Top automation opportunities ranked by hours and £, pain points by frequency, sentiment heat-map by department, boring-tasks 2x2. The decision-grade output sits here.",
+              tag: "Step 2 · The wow moment",
+              title: "See what they actually said",
+              body: "Full transcripts, AI summaries, sentiment by department, pain points by frequency. This is where the employer reads something they genuinely didn't know. The insight that makes the ROI case obvious.",
             },
             {
               href: `${APP_BASE}/try/agents`,
@@ -357,8 +357,9 @@ const QBNCapital = () => (
           <p className="text-xl text-gray-400 max-w-3xl leading-relaxed font-light mb-16">
             Thirty years of research at Cardiff and Oxford. Seventeen books on work, skills, and the
             AI economy. Keynotes at the World Bank and the International Labour Organization. Phil
-            advises the company; his Digital Futures of Work programme is the academic rigour
-            behind the platform.
+            is Executive Director at Jobgraph — his Digital Futures of Work programme is the
+            academic rigour behind the platform, and his network opens doors that other vendors
+            spend a decade trying to reach.
           </p>
         </FadeIn>
 
@@ -516,7 +517,7 @@ const QBNCapital = () => (
             {
               initials: "PB",
               name: "Professor Phillip Brown",
-              title: "Academic Advisor",
+              title: "Executive Director",
               bio: "30 years of workforce research at Cardiff and Oxford. 17 books. Keynotes at the World Bank and ILO. His Digital Futures of Work programme is the academic foundation the platform is built on.",
             },
           ].map((person, i) => (
