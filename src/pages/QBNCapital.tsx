@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Eye, GitBranch, Lightbulb, PhoneCall, Rocket, Sparkles } from "lucide-react";
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
 import SEO from "@/components/SEO";
@@ -6,11 +6,13 @@ import SEO from "@/components/SEO";
 const BOOK_CALL_HREF =
   "mailto:daniel@jobgraph.com?subject=Jobgraph%20%E2%80%94%20follow%20up%20from%20Hong%20Kong";
 
+const APP_BASE = "https://app.jobgraph.com";
+
 const QBNCapital = () => (
   <Layout>
     <SEO
-      title="Jobgraph — for QBN Capital & Frank Tong"
-      description="A personal follow-up from Hong Kong: where Jobgraph is, why our methodology is the only UK government AI transformation that's actually scaling, and why we'd love QBN as a partner."
+      title="Jobgraph — for QBN Capital"
+      description="Workforce intelligence for the AI transition. Interview every employee, understand what they actually do, automate the painful tasks, measure the ROI. Live demo + investment ask."
     />
 
     {/* ── Hero ─────────────────────────────────────────────────────────────── */}
@@ -19,35 +21,269 @@ const QBNCapital = () => (
       <div className="max-w-5xl mx-auto w-full relative z-10 pt-20">
         <FadeIn>
           <span className="text-xs font-bold uppercase tracking-widest text-accent mb-6 block">
-            Personal · for QBN Capital
+            For QBN Capital
           </span>
         </FadeIn>
         <FadeIn delay={0.1}>
           <h1 className="text-5xl md:text-7xl font-extrabold text-foreground leading-[1.05] tracking-tight mb-8">
-            Frank — what we couldn&apos;t fit into{" "}
-            <span className="text-gradient">a coffee in Hong Kong.</span>
+            Evals exist for the models.{" "}
+            <span className="text-gradient">We&apos;re building the equivalent for the human side.</span>
           </h1>
         </FadeIn>
         <FadeIn delay={0.2}>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl leading-relaxed font-light mb-10">
-            Thanks again for the time. Here&apos;s where Jobgraph is, why we think the methodology
-            travels, and why QBN is exactly the kind of partner we&apos;d want as we move from UK
-            government into Asia&apos;s banking sector.
+            Jobgraph interviews every employee, understands what they actually do, and ships
+            autonomous agents that take the painful tasks off their plate — then measures the ROI
+            in hours saved and £ avoided. The workforce intelligence platform for the AI transition.
           </p>
         </FadeIn>
         <FadeIn delay={0.3}>
-          <a
-            href={BOOK_CALL_HREF}
-            className="inline-flex items-center gap-2 px-8 py-3.5 text-sm font-semibold rounded-full bg-foreground text-background hover:bg-foreground/90 transition-all duration-300 hover:shadow-xl hover:shadow-foreground/15 hover:-translate-y-0.5 group"
-          >
-            Book a follow-up call
-            <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-          </a>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href="#see-it"
+              className="inline-flex items-center gap-2 px-8 py-3.5 text-sm font-semibold rounded-full bg-foreground text-background hover:bg-foreground/90 transition-all duration-300 hover:shadow-xl hover:shadow-foreground/15 hover:-translate-y-0.5 group"
+            >
+              Try the live demo
+              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+            </a>
+            <a
+              href={BOOK_CALL_HREF}
+              className="inline-flex items-center gap-2 px-8 py-3.5 text-sm font-semibold rounded-full border-2 border-border text-foreground hover:bg-secondary transition-all duration-200"
+            >
+              Book a call
+            </a>
+          </div>
         </FadeIn>
       </div>
     </section>
 
-    {/* ── Where we are ──────────────────────────────────────────────────────── */}
+    {/* ── How it works ─────────────────────────────────────────────────────── */}
+    <section className="py-32 px-6 lg:px-10">
+      <div className="max-w-6xl mx-auto">
+        <FadeIn>
+          <span className="text-xs font-bold uppercase tracking-widest text-accent mb-4 block">
+            How it works
+          </span>
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <h2 className="text-4xl md:text-6xl font-extrabold text-foreground leading-[1.1] mb-6 max-w-4xl">
+            Four steps. End-to-end.
+          </h2>
+        </FadeIn>
+        <FadeIn delay={0.2}>
+          <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed font-light mb-16">
+            Most consultancies stop at a slide deck. Most software stops at a dashboard. Jobgraph
+            covers the whole loop, so the AI investment actually delivers.
+          </p>
+        </FadeIn>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {[
+            {
+              Icon: PhoneCall,
+              num: "01",
+              title: "Speak to the employee",
+              body: "An AI calls or messages every employee. Asks what they actually do day-to-day, what drains them, what they want to keep, what they&apos;d hand over. Not what HR thinks they do.",
+            },
+            {
+              Icon: Eye,
+              num: "02",
+              title: "Understand what they do",
+              body: "Maps tasks, capabilities, time allocation, tacit knowledge — the layer beneath job titles. A living graph of how work actually flows through the org.",
+            },
+            {
+              Icon: Sparkles,
+              num: "03",
+              title: "Agents automate it",
+              body: "AI takes over the automatable parts of their work. Not replacing people — augmenting them and freeing capacity for the work only humans can do.",
+            },
+            {
+              Icon: GitBranch,
+              num: "04",
+              title: "Measure the ROI",
+              body: "Hours saved. £ avoided. Capacity unlocked. Real numbers, not consultant estimates. Then loop again — the graph stays live.",
+            },
+          ].map((c, i) => (
+            <FadeIn key={c.num} delay={0.25 + i * 0.08}>
+              <div className="rounded-2xl border-2 border-border bg-background p-6 h-full flex flex-col">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
+                    <c.Icon size={16} />
+                  </div>
+                  <span className="font-mono text-xs text-muted-foreground/70">{c.num}</span>
+                </div>
+                <h3 className="text-base font-extrabold text-foreground mb-2 leading-tight">
+                  {c.title}
+                </h3>
+                <p
+                  className="text-muted-foreground text-sm leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: c.body }}
+                />
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+
+        <FadeIn delay={0.7}>
+          <div className="mt-16 border-l-4 border-accent pl-6 max-w-3xl">
+            <p className="text-xl md:text-2xl text-foreground leading-relaxed italic font-light">
+              &ldquo;Consultancies give you a map drawn by someone who&apos;s never been to the
+              country.{" "}
+              <span className="not-italic font-semibold">
+                We give you a GPS that updates in real time.
+              </span>
+              &rdquo;
+            </p>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+
+    {/* ── See it working — clickable demo ──────────────────────────────────── */}
+    <section id="see-it" className="py-32 px-6 lg:px-10 bg-secondary/50 bg-grain">
+      <div className="max-w-6xl mx-auto">
+        <FadeIn>
+          <span className="text-xs font-bold uppercase tracking-widest text-accent mb-4 block">
+            See it working
+          </span>
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <h2 className="text-4xl md:text-6xl font-extrabold text-foreground leading-[1.1] mb-6 max-w-4xl">
+            Walk the loop in three minutes.
+          </h2>
+        </FadeIn>
+        <FadeIn delay={0.2}>
+          <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed font-light mb-12">
+            The four screens below open the actual product on{" "}
+            <span className="text-foreground font-mono text-base">app.jobgraph.com</span>, populated
+            with realistic mock data so you can build a mission, watch the calls complete, see the
+            insights, build an agent, and watch the ROI land — end-to-end. Sign in with Google, or
+            drop me a line and I&apos;ll send a guest login.
+          </p>
+        </FadeIn>
+
+        <div className="grid md:grid-cols-2 gap-4">
+          {[
+            {
+              href: `${APP_BASE}/try/missions`,
+              Icon: PhoneCall,
+              tag: "Step 1 · Speak",
+              title: "Build a call mission",
+              body: "Pick a roster, choose an interviewer (Phil, Sarah, Marcus), set the brief, hit launch. Watch calls move queued → ringing → completed live, with full transcripts and AI summaries.",
+            },
+            {
+              href: `${APP_BASE}/try/insights`,
+              Icon: Lightbulb,
+              tag: "Step 2 · Understand",
+              title: "See the workforce intel",
+              body: "Top automation opportunities ranked by hours and £, pain points by frequency, sentiment heat-map by department, boring-tasks 2x2. The decision-grade output sits here.",
+            },
+            {
+              href: `${APP_BASE}/try/agents`,
+              Icon: Sparkles,
+              tag: "Step 3 · Automate",
+              title: "Build an agent",
+              body: "Pick an opportunity, the auto-generated spec drops in. The employees who said yes during their interview are pre-selected as pilot users. Hit build and watch it go live.",
+            },
+            {
+              href: `${APP_BASE}/try/pilots`,
+              Icon: Rocket,
+              tag: "Step 4 · ROI",
+              title: "Watch the numbers",
+              body: "Hours-saved sparklines per pilot, NPS, projected annual savings, FTE not hired. The numbers stay live — every loop sharpens them.",
+            },
+          ].map((d, i) => (
+            <FadeIn key={d.href} delay={0.25 + i * 0.08}>
+              <a
+                href={d.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block rounded-2xl border-2 border-border bg-background p-6 hover:border-accent/50 hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 h-full"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
+                    <d.Icon size={16} />
+                  </div>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-accent">
+                    {d.tag}
+                  </span>
+                </div>
+                <h3 className="text-lg font-extrabold text-foreground mb-2 group-hover:text-accent transition-colors">
+                  {d.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4">{d.body}</p>
+                <span className="text-xs font-semibold text-foreground inline-flex items-center gap-1 group-hover:text-accent transition-colors">
+                  Open in new tab
+                  <ArrowRight size={12} className="transition-transform group-hover:translate-x-1" />
+                </span>
+              </a>
+            </FadeIn>
+          ))}
+        </div>
+
+        <FadeIn delay={0.6}>
+          <p className="text-sm text-muted-foreground mt-8 max-w-3xl">
+            Frank — if you&apos;d rather see a fully provisioned tenant with QBN-flavoured portfolio
+            data instead of the demo dataset, drop me a line and I&apos;ll set it up before our next
+            call.
+          </p>
+        </FadeIn>
+      </div>
+    </section>
+
+    {/* ── The proof — Ministry of Justice ──────────────────────────────────── */}
+    <section className="py-32 px-6 lg:px-10">
+      <div className="max-w-6xl mx-auto">
+        <FadeIn>
+          <span className="text-xs font-bold uppercase tracking-widest text-accent mb-4 block">
+            The proof
+          </span>
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <h2 className="text-4xl md:text-6xl font-extrabold text-foreground leading-[1.1] mb-6 max-w-4xl">
+            Ministry of Justice. 2,959 employees. Every operational role.
+          </h2>
+        </FadeIn>
+        <FadeIn delay={0.2}>
+          <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed font-light mb-16">
+            We ran the platform across the most operationally fragile and politically scrutinised
+            part of UK government. The numbers below are real, from a live workforce analysis. This
+            is what the methodology produces when you actually deploy it.
+          </p>
+        </FadeIn>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          {[
+            { value: "2,959", label: "Employees mapped" },
+            { value: "644", label: "Tasks analysed" },
+            { value: "£30M+", label: "Potential annual savings" },
+            { value: "2.6 hrs", label: "Saved / worker / day" },
+          ].map((s, i) => (
+            <FadeIn key={s.label} delay={0.25 + i * 0.08}>
+              <div className="rounded-2xl border-2 border-border bg-background p-6 text-center md:text-left">
+                <div className="text-3xl md:text-4xl font-extrabold text-foreground tabular-nums">
+                  {s.value}
+                </div>
+                <div className="text-[11px] uppercase tracking-widest text-muted-foreground mt-2">
+                  {s.label}
+                </div>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+
+        <FadeIn delay={0.55}>
+          <p className="text-foreground text-xl md:text-2xl font-extrabold leading-tight max-w-3xl">
+            We did it{" "}
+            <em className="not-italic text-gradient">with</em> the workforce — interviewing every
+            operational role, surfacing what people actually do, and building agents alongside the
+            staff most affected. That&apos;s why it works in places other transformations stall.
+          </p>
+        </FadeIn>
+      </div>
+    </section>
+
+    {/* ── Where we are today ───────────────────────────────────────────────── */}
     <section className="py-32 px-6 lg:px-10 bg-secondary/50 bg-grain">
       <div className="max-w-6xl mx-auto">
         <FadeIn>
@@ -67,25 +303,25 @@ const QBNCapital = () => (
           </p>
         </FadeIn>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        <div className="grid md:grid-cols-3 gap-6">
           {[
             {
               kpi: "£500k / yr",
               label: "DWP contract",
               detail:
-                "Securing a recurring contract with the Department for Work and Pensions, with forward-deployed engineers embedded inside the team.",
+                "Securing a recurring contract with the Department for Work and Pensions, building an AI unit + skills observatory for Skills England. Forward-deployed engineers embedded in the team.",
             },
             {
-              kpi: "FDEs in gov",
-              label: "Embedded delivery",
+              kpi: "5+ warm",
+              label: "Pipeline",
               detail:
-                "Jobgraph engineers working alongside civil servants, not selling from the outside. We learn the system. The system learns us.",
+                "DWP, Motability, ITV, UAE Government — more qualified pipeline than most Series A companies, built on top of the Decoded CDO/CHRO network across the FTSE 100.",
             },
             {
-              kpi: "Gov → Corporate",
+              kpi: "Gov → Asia",
               label: "Next frontier",
               detail:
-                "The methodology has been proven in the hardest environment — heavy regulation, unions, scrutiny. Banks like HSBC are the natural next move.",
+                "The methodology has been proven in the hardest environment: heavy regulation, unionised workforces, public scrutiny. Asian banking is the natural next move.",
             },
           ].map((card, i) => (
             <FadeIn key={card.label} delay={0.25 + i * 0.1}>
@@ -104,76 +340,12 @@ const QBNCapital = () => (
       </div>
     </section>
 
-    {/* ── Proof point: Probation ────────────────────────────────────────────── */}
-    <section className="py-32 px-6 lg:px-10">
+    {/* ── Academic foundation — Phil Brown ─────────────────────────────────── */}
+    <section className="py-32 px-6 lg:px-10" style={{ backgroundColor: "#1A1A1A" }}>
       <div className="max-w-6xl mx-auto">
         <FadeIn>
           <span className="text-xs font-bold uppercase tracking-widest text-accent mb-4 block">
-            The proof
-          </span>
-        </FadeIn>
-        <FadeIn delay={0.1}>
-          <h2 className="text-4xl md:text-6xl font-extrabold text-foreground leading-[1.1] mb-6 max-w-4xl">
-            The only UK gov AI transformation that is actually scaling.
-          </h2>
-        </FadeIn>
-        <FadeIn delay={0.2}>
-          <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed font-light mb-16">
-            We applied the methodology to UK Probation — one of the most operationally fragile and
-            politically sensitive parts of government. The numbers are unusual.
-          </p>
-        </FadeIn>
-
-        <div className="grid md:grid-cols-2 gap-6 mb-16">
-          <FadeIn delay={0.25}>
-            <div className="rounded-2xl border-2 border-border bg-background p-10">
-              <div className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">
-                Invested
-              </div>
-              <div className="text-6xl md:text-7xl font-extrabold text-foreground leading-none mb-4">
-                £7m
-              </div>
-              <p className="text-muted-foreground text-base leading-relaxed">
-                Into the first product, built with probation staff at the centre — not as a target
-                of automation, but as co-designers.
-              </p>
-            </div>
-          </FadeIn>
-          <FadeIn delay={0.35}>
-            <div className="rounded-2xl border-2 border-accent bg-background p-10">
-              <div className="text-xs font-bold uppercase tracking-widest text-accent mb-3">
-                Returned
-              </div>
-              <div className="text-6xl md:text-7xl font-extrabold text-gradient leading-none mb-4">
-                £80m
-              </div>
-              <p className="text-muted-foreground text-base leading-relaxed">
-                Through time savings and cost avoidance — primarily by{" "}
-                <span className="text-foreground font-semibold">not having to hire</span> the
-                probation officers the system would otherwise have needed.
-              </p>
-            </div>
-          </FadeIn>
-        </div>
-
-        <FadeIn delay={0.5}>
-          <p className="text-foreground text-xl md:text-2xl font-extrabold leading-tight max-w-3xl">
-            The reason it worked: we did it{" "}
-            <em className="not-italic text-gradient">with</em> the probation staff themselves.
-          </p>
-        </FadeIn>
-      </div>
-    </section>
-
-    {/* ── Phil Brown — spiritual founder ────────────────────────────────────── */}
-    <section
-      className="py-32 px-6 lg:px-10"
-      style={{ backgroundColor: "#1A1A1A" }}
-    >
-      <div className="max-w-6xl mx-auto">
-        <FadeIn>
-          <span className="text-xs font-bold uppercase tracking-widest text-accent mb-4 block">
-            The spiritual founder
+            Academic foundation
           </span>
         </FadeIn>
         <FadeIn delay={0.1}>
@@ -183,10 +355,10 @@ const QBNCapital = () => (
         </FadeIn>
         <FadeIn delay={0.2}>
           <p className="text-xl text-gray-400 max-w-3xl leading-relaxed font-light mb-16">
-            Phil is the reason the methodology exists. Thirty years of research at Cardiff. Seventeen
-            books on work, skills, and the AI economy. Keynotes at the World Bank and the
-            International Labour Organization. He is the company&apos;s spiritual founder, and his
-            framework underpins every piece of work we ship.
+            Thirty years of research at Cardiff and Oxford. Seventeen books on work, skills, and the
+            AI economy. Keynotes at the World Bank and the International Labour Organization. Phil
+            advises the company; his Digital Futures of Work programme is the academic rigour
+            behind the platform.
           </p>
         </FadeIn>
 
@@ -206,7 +378,7 @@ const QBNCapital = () => (
           {[
             {
               title: "Beyond skills",
-              body: "Phil&apos;s core insight: skills frameworks miss most of what makes a workforce work — tacit knowledge, relationships, judgment, the unspoken way things get done. Jobgraph is the first tool built around that insight.",
+              body: "Skills frameworks miss most of what makes a workforce work — tacit knowledge, relationships, judgment, the unspoken way things get done. Jobgraph is the first tool built around that insight.",
             },
             {
               title: "Capability, not headcount",
@@ -214,7 +386,7 @@ const QBNCapital = () => (
             },
             {
               title: "A network the rest can&apos;t buy",
-              body: "Phil opens doors at the World Bank, the ILO, and senior civil service that other vendors take a decade to build. That network is what got Jobgraph into the room six weeks in.",
+              body: "Phil opens doors at the World Bank, the ILO, and senior civil service that other vendors take a decade to build. Part of why Jobgraph is in the room six weeks in.",
             },
           ].map((card, i) => (
             <FadeIn key={card.title} delay={0.4 + i * 0.1}>
@@ -234,71 +406,7 @@ const QBNCapital = () => (
       </div>
     </section>
 
-    {/* ── The methodology / why it works ────────────────────────────────────── */}
-    <section className="py-32 px-6 lg:px-10 bg-secondary/50 bg-grain">
-      <div className="max-w-6xl mx-auto">
-        <FadeIn>
-          <span className="text-xs font-bold uppercase tracking-widest text-accent mb-4 block">
-            Why the ROI actually lands
-          </span>
-        </FadeIn>
-        <FadeIn delay={0.1}>
-          <h2 className="text-4xl md:text-6xl font-extrabold text-foreground leading-[1.1] mb-6 max-w-4xl">
-            Cultural transformation <em className="not-italic text-gradient">is</em> the technical
-            transformation.
-          </h2>
-        </FadeIn>
-        <FadeIn delay={0.2}>
-          <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed font-light mb-16">
-            Most AI rollouts fail not because the tech doesn&apos;t work, but because they land on
-            people who weren&apos;t asked, didn&apos;t want it, and quietly refuse to use it. Our
-            edge is that we treat that as the actual problem.
-          </p>
-        </FadeIn>
-
-        <div className="grid md:grid-cols-2 gap-10 max-w-5xl">
-          {[
-            {
-              title: "We interview the workforce.",
-              body: "An AI in the style of Phil Brown. It calls or texts people after work and asks what drains them, what they want to keep, what they&apos;d gladly hand over. No surveys. No consultants. The data is the workforce&apos;s own words.",
-            },
-            {
-              title: "We map what actually happens.",
-              body: "A live graph of tasks, tacit knowledge, capability and AI exposure across the org — the layer beneath job titles and HRIS data. This is what every transformation needs and almost no transformation has.",
-            },
-            {
-              title: "We build with the people, not at them.",
-              body: "Autonomous agents that take painful tasks off the employee&apos;s plate — not a redundancy memo. The workforce becomes the buyer of the automation, not the casualty of it. Adoption stops being a problem.",
-            },
-            {
-              title: "We measure the ROI honestly.",
-              body: "Hours saved. Cost avoided. Capacity unlocked. The same loop runs again in three months — re-interview, re-map, re-measure — so the numbers stay live, not slide-deck fiction.",
-            },
-          ].map((card, i) => (
-            <FadeIn key={card.title} delay={0.25 + i * 0.08}>
-              <div>
-                <h3 className="text-2xl font-extrabold text-foreground mb-3 leading-tight">
-                  {card.title}
-                </h3>
-                <p
-                  className="text-muted-foreground text-base leading-relaxed"
-                  dangerouslySetInnerHTML={{ __html: card.body }}
-                />
-              </div>
-            </FadeIn>
-          ))}
-        </div>
-
-        <FadeIn delay={0.6}>
-          <p className="text-foreground text-xl md:text-2xl font-extrabold leading-tight max-w-3xl mt-16">
-            The competitive advantage isn&apos;t that we use AI. Everyone uses AI. It&apos;s that
-            our customers&apos; people <em className="not-italic">want</em> the change to land.
-          </p>
-        </FadeIn>
-      </div>
-    </section>
-
-    {/* ── Why QBN / the expansion ───────────────────────────────────────────── */}
+    {/* ── Why QBN ──────────────────────────────────────────────────────────── */}
     <section className="py-32 px-6 lg:px-10">
       <div className="max-w-6xl mx-auto">
         <FadeIn>
@@ -315,12 +423,11 @@ const QBNCapital = () => (
           <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed font-light mb-10">
             We chose to prove this in UK government — heavy regulation, unionised workforces, public
             scrutiny, political risk. If the methodology works there, it works anywhere. Banks are
-            the natural next market: same regulatory weight, same scale, much better unit
-            economics — and Asia is where the volume is.
+            the natural next market: same regulatory weight, same scale, much better unit economics
+            — and Asia is where the volume is.
           </p>
         </FadeIn>
 
-        {/* Existing connection callout */}
         <FadeIn delay={0.3}>
           <div className="rounded-2xl border-2 border-accent/40 bg-accent/5 p-8 md:p-10 mb-16 max-w-4xl">
             <div className="text-xs font-bold uppercase tracking-widest text-accent mb-3">
@@ -329,7 +436,12 @@ const QBNCapital = () => (
             <p className="text-lg md:text-xl text-foreground leading-relaxed font-medium">
               Daniel spent years at <span className="font-extrabold">Amplyfi</span> — one of QBN&apos;s
               own portfolio companies. A lot of what Jobgraph does well is a direct result of what
-              that chapter taught us about scaling AI into large, regulated enterprises.
+              that chapter taught us about scaling AI inside large, regulated enterprises.
+            </p>
+            <p className="text-base text-muted-foreground leading-relaxed mt-4">
+              Will lived and worked in <span className="font-extrabold">Hong Kong</span> — knows the
+              region, the banks, and the regulators first-hand. Between the two of us, the path
+              into Asia banking isn&apos;t cold.
             </p>
             <p className="text-base text-muted-foreground leading-relaxed mt-4">
               Your thesis —{" "}
@@ -342,7 +454,7 @@ const QBNCapital = () => (
           </div>
         </FadeIn>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        <div className="grid md:grid-cols-3 gap-6">
           {[
             {
               title: "A proven approach in regulated, unionised environments.",
@@ -373,7 +485,7 @@ const QBNCapital = () => (
       </div>
     </section>
 
-    {/* ── The team ──────────────────────────────────────────────────────────── */}
+    {/* ── The team ─────────────────────────────────────────────────────────── */}
     <section className="py-32 px-6 lg:px-10 bg-secondary/50 bg-grain">
       <div className="max-w-6xl mx-auto">
         <FadeIn>
@@ -383,29 +495,29 @@ const QBNCapital = () => (
         </FadeIn>
         <FadeIn delay={0.1}>
           <h2 className="text-4xl md:text-6xl font-extrabold text-foreground leading-[1.1] mb-16 max-w-4xl">
-            Three founders. One thesis.
+            Two founders. One advisor. One thesis.
           </h2>
         </FadeIn>
 
         <div className="grid md:grid-cols-3 gap-6">
           {[
             {
-              initials: "PB",
-              name: "Professor Phillip Brown",
-              title: "Spiritual founder & Executive Director",
-              bio: "30 years of workforce research. 17 books. Keynotes at the World Bank and ILO. The methodology is his life&apos;s work — Jobgraph is the operationalisation of it.",
-            },
-            {
               initials: "WT",
               name: "Will Tarr",
               title: "Co-founder & CTO",
-              bio: "YC founder. Has built and shipped AI products at scale. Owns the technical platform — the interview agent, the graph, the autonomous workers.",
+              bio: "<strong class=\"text-foreground\">Harvard-educated</strong> technical co-founder. Lived and worked in <strong class=\"text-foreground\">Hong Kong</strong> — knows the region, the banks, and the regulators first-hand. YC alum. Full-stack engineer who&apos;s shipped AI products at scale. Owns the platform end-to-end — the interview agent, the live graph, the autonomous workers, the simulation engine.",
             },
             {
               initials: "DJ",
               name: "Daniel James",
               title: "Co-founder & CEO",
-              bio: "10+ years leading workforce transformation across large UK organisations — including time at <strong class=\"text-foreground\">Amplyfi</strong>, one of QBN&apos;s own portfolio companies. That&apos;s where a lot of what Jobgraph does well comes from: a hands-on lesson in what does and doesn&apos;t travel when AI lands inside a large, regulated enterprise. Holds the customer relationships and the gov network.",
+              bio: "Built the Justice AI unit at MoJ. Previously Number 10 data capability. Spent years at <strong class=\"text-foreground\">Amplyfi</strong>, one of QBN&apos;s portfolio companies, where the lessons about scaling AI inside regulated enterprises were learned the hard way. Government AI from the inside out.",
+            },
+            {
+              initials: "PB",
+              name: "Professor Phillip Brown",
+              title: "Academic Advisor",
+              bio: "30 years of workforce research at Cardiff and Oxford. 17 books. Keynotes at the World Bank and ILO. His Digital Futures of Work programme is the academic foundation the platform is built on.",
             },
           ].map((person, i) => (
             <FadeIn key={person.name} delay={0.15 + i * 0.1}>
@@ -444,7 +556,7 @@ const QBNCapital = () => (
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed mb-10">
             Whenever works in the next two weeks — happy to come back to Hong Kong, or jump on a
-            call. Thank you again for the meeting.
+            call. Thanks for reading this far.
           </p>
         </FadeIn>
         <FadeIn delay={0.2}>
